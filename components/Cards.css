@@ -1,0 +1,18 @@
+.movie-card {
+    width: 100%;
+}
+
+.card-img{
+    width: 100%;
+}
+
+.card-title{
+    text-align: left;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.card-text {
+    text-align: left;
+    font-size: 14px;
+}

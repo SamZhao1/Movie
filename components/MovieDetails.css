@@ -1,0 +1,8 @@
+.movieDetails{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.info{
+    font-size: small;
+}
