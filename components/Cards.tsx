@@ -9,7 +9,7 @@ function Cards(props:{movieID: number, image:string, title:string, summary:strin
 
         <div className='movie-card'>
             <a href={'/id/'+ props.movieID}>
-                <img className='card-img' src={props.image} alt='NO IMAGE'></img>
+                <img className='card-img' src={props.image} alt='NO IMAGE' width="500" height="750"></img>
             </a>
             <h1 className='card-title'>{props.title}</h1>
             <p className='card-text'>{props.summary}</p>
