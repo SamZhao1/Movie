@@ -12,7 +12,7 @@ import Link from 'next/link'
 function Navbar():JSX.Element {
     return (
         <div className='navbar' role='navigation' aria-label='main navigation'>
-            <div id="navbarBasicExample" className='navbar-menu'>
+            <div id="navbarBasicExample" className='navbar-menu is-active'>
                 <div className='navbar-start'>
                     <NavButtonMain/>
                     <NavButtonProtected/>
