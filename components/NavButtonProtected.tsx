@@ -12,10 +12,6 @@ function NavButtonProtected(): JSX.Element {
                 <Link className="navbar-item" href='/favorites'>
                     Favorites
                 </Link>
-
-                <Link className="navbar-item" href='/user'>
-                    Account
-                </Link>
             </>
         )
     }

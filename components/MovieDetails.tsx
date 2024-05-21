@@ -19,7 +19,7 @@ function MovieDetails(props:{
     let genreList:string[] = [];
 
     props.details.genres.forEach(function (value) {
-        genreList.push(value.name);
+        genreList.push(value.name+',');
       }); 
 
 
@@ -31,11 +31,11 @@ function MovieDetails(props:{
             </div>
            
             <div className="info">
-                <h1 className='card-title'>{props.details.original_title}</h1>
-                <p className='card-text'>{props.details.overview}</p>
-                <p className='card-text'>{props.details.release_date}</p>
-                <p className='card-text'>{props.details.runtime} minutes</p>
-                <p className='card-text'>{genreList}</p>
+                <h1 className='card-title title'>{props.details.original_title}</h1>
+                <p className='card-text subtitle'>{props.details.release_date}</p>
+                <p className='card-text subtitle'>{props.details.runtime} minutes</p>
+                <p className='card-text subtitle'>{genreList}</p>
+                <p className='card-text subtitle is-4'>{props.details.overview}</p>
             </div>
 
             <AddRemoveButton movieID={props.details.id} isFav={props.isFav} userId = {props.userId}/>

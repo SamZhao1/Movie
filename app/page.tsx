@@ -1,4 +1,5 @@
 import Grid from '../components/Grid';
+import ScrollUp from '../components/ScrollUp';
 
 const api = process.env.TMDB_API_KEY;
 
@@ -12,7 +13,7 @@ async function getTheatersMovies(page:number):Promise<Response> {
 export default function PopularMovies():React.ReactNode {
   return( 
     <div className='container'> 
-      <Grid getMovies={getTheatersMovies} /> 
+      <Grid getMovies={getTheatersMovies} />
     </div>
   );
 }
