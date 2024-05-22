@@ -41,8 +41,10 @@ export default async function FavList(){
 
     //console.log(parsedData[1].movieId)
 
+    const api = process.env.TMDB_API_KEY;
+
     async function getSearch(params:{movieId: number}){
-      const response = await fetch('https://api.themoviedb.org/3/movie/' + params.movieId +'?api_key=69ee2ff310af9312e9b955dd72585582&language=en-US');
+      const response = await fetch('https://api.themoviedb.org/3/movie/' + params.movieId +'?api_key='+api+'&language=en-US');
       return response.json();
     }
 
