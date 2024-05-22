@@ -11,8 +11,10 @@ export default async function SearchMovie({params}: {params: { slug: string }}):
 
   const session = await getServerSession(authOptions);
 
+  const api = process.env.TMDB_API_KEY;
+
   async function getSearch(){
-    const response:Response = await fetch('https://api.themoviedb.org/3/movie/' + params.slug +'?api_key=69ee2ff310af9312e9b955dd72585582&language=en-US');
+    const response:Response = await fetch('https://api.themoviedb.org/3/movie/' + params.slug +'?api_key='+api+'&language=en-US');
     return response.json();
     }
 
