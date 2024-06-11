@@ -1,5 +1,5 @@
-import Navbar from '../components/Navbar';
-import Providers from '../components/SessionProvider';
+import {Navbar} from '../components/Navbar';
+import {AuthProvider} from '../components/SessionProvider';
 import ScrollUp from '../components/ScrollUp';
 
 
@@ -18,13 +18,12 @@ export default async function RootLayout({
     <html lang="en">
       <head><link rel="shortcut" href="#"/></head>
       <body>
-        <Providers>
+        <AuthProvider>
           <div className='container'>
             <Navbar/>
           </div>
-          <ScrollUp/>
           {children}
-        </Providers>
+        </AuthProvider>
       </body>
     </html>
   )

@@ -1,4 +1,4 @@
-import Grid from "../../../components/Grid";
+import {Grid} from "../../../components/Grid";
 
 export default async function SearchMovie({params}: {params: { slug: string }}):Promise<JSX.Element> {
 

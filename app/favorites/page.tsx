@@ -7,7 +7,7 @@ import { authOptions } from '../api/auth/[...nextauth]/route'
 
 import prisma from '../../components/database'
 
-import Cards from '../../components/Cards'
+import {Cards} from '../../components/Cards'
 import './page.css';
 import 'bulma/css/bulma.min.css';
 

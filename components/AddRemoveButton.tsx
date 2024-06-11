@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 import { authOptions } from '../app/api/auth/[...nextauth]/route'
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
 
-function AddRemoveButton(props:any):JSX.Element {
+export const AddRemoveButton = (props:any):JSX.Element => {
 
     const router: AppRouterInstance = useRouter();
     const {data:session} = useSession();
@@ -59,5 +59,3 @@ function AddRemoveButton(props:any):JSX.Element {
         )
     }
 }
-
-export default AddRemoveButton;

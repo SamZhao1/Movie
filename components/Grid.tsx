@@ -3,11 +3,11 @@
 import { useState, useRef } from "react";
 import InfiniteScroll from 'react-infinite-scroller';
 import './Grid.css';
-import Cards from './Cards'
+import {Cards} from './Cards'
 
 const baseURL:string = "https://image.tmdb.org/t/p/w500/";
 
-function Grid(props:{getMovies: Function}) :JSX.Element {
+export const Grid = (props:{getMovies: Function}) :JSX.Element => {
     const fetching = useRef<boolean>(false);
     const[pages, setPages] = useState([]);
 
@@ -51,5 +51,3 @@ function Grid(props:{getMovies: Function}) :JSX.Element {
         </InfiniteScroll>
     );
 };
-
-export default Grid;

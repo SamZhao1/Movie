@@ -2,17 +2,17 @@
 
 import 'bulma/css/bulma.min.css';
 
-import NavButtonMain from './NavButtonMain';
-import NavButtonProtected from './NavButtonProtected';
-import SearchBar from './SearchBar';
-import Login from './Login';
+import {NavButtonMain} from './NavButtonMain';
+import {NavButtonProtected} from './NavButtonProtected';
+import {SearchBar} from './SearchBar';
+import {Login} from './Login';
 
 import Link from 'next/link'
 
-function Navbar():JSX.Element {
+export const Navbar = ():JSX.Element => {
 
-
-    const handler = () => {
+    //From Bulma Docs
+    const handleBurgerMenu = () => {
         const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
         
         // Add a click event on each of them
@@ -33,16 +33,16 @@ function Navbar():JSX.Element {
     }
 
     return (
-        <div className="has-navbar-fixed-top">
             <div className='navbar' role='navigation' aria-label='main navigation'>
+                 <div className="navbar-brand">
+                    <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick={handleBurgerMenu}>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
 
-                <a className="navbar-burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick={handler}>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-
-                <div className='navbar-menu' id="navbarBasicExample">
+                <div id="navbarBasicExample" className='navbar-menu'>
                     <div className='navbar-start'>
                         <NavButtonMain/>
                         <NavButtonProtected/>
@@ -53,8 +53,5 @@ function Navbar():JSX.Element {
                     </div>
                 </div>
             </div>
-        </div>
     );
   };
-
-  export default Navbar;

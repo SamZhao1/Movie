@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 
-function NavButtonMain(): JSX.Element {
-
+export const NavButtonMain = (): JSX.Element => {
     return(
         <>
             <Link className="navbar-item" href='/'>
@@ -18,5 +17,3 @@ function NavButtonMain(): JSX.Element {
         </>
     )
 };
-
-export default NavButtonMain;

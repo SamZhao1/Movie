@@ -1,4 +1,4 @@
-import MovieDetails from "../../../components/MovieDetails";
+import {MovieDetails} from "../../../components/MovieDetails";
 
 import { getServerSession } from "next-auth";
 
@@ -25,18 +25,23 @@ export default async function SearchMovie({params}: {params: { slug: string }}):
     let userName:string = session?.user?.name;
     let movieID:number = parseInt(params.slug);
 
-    const isFav = await prisma.favorites.findFirst({
-      where: {
-        movieId: parseInt(params.slug),
-      },
-    })
-    
-    if(isFav){
-      return true;
+    if(session){
+      const isFav = await prisma.favorites.findFirst({
+        where: {
+          movieId: parseInt(params.slug),
+        },
+      })
+
+      if(isFav){
+        return true;
+      }
+  
+      else
+        return false;
     }
 
-    else
-      return false;
+    return false;
+  
   }
 
   const check = await checkFav();

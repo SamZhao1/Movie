@@ -3,7 +3,7 @@
 import Link from "next/link";
 import {useSession} from "next-auth/react";
 
-function NavButtonProtected(): JSX.Element {
+export const NavButtonProtected = (): JSX.Element => {
     const {data:session} = useSession();
 
     if(session){
@@ -18,5 +18,3 @@ function NavButtonProtected(): JSX.Element {
     else
         return <></>
 };
-
-export default NavButtonProtected;
