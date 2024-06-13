@@ -1,5 +1,4 @@
 import {Grid} from '../components/Grid';
-import ScrollUp from '../components/ScrollUp';
 
 const api = process.env.TMDB_API_KEY;
 

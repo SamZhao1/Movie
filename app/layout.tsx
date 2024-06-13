@@ -1,7 +1,5 @@
 import {Navbar} from '../components/Navbar';
 import {AuthProvider} from '../components/SessionProvider';
-import ScrollUp from '../components/ScrollUp';
-
 
 export const metadata = {
   title: 'Next.js',
@@ -16,7 +14,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <head><link rel="shortcut" href="#"/></head>
+      <head></head>
       <body>
         <AuthProvider>
           <div className='container'>

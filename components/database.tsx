@@ -1,4 +1,4 @@
-//From Prisma docs on best practices for instantiating Prisma Client with Next.js
+//From Prisma documentation on best practices for instantiating Prisma Client with Next.js
 
 import { PrismaClient } from '@prisma/client'
 

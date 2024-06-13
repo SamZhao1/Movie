@@ -13,8 +13,6 @@ export const Grid = (props:{getMovies: Function}) :JSX.Element => {
 
     let lastPage:number = 0;
 
-    
-
     const loadMore = async(page:number) => {
         if(!fetching.current){
             try{
@@ -22,7 +20,6 @@ export const Grid = (props:{getMovies: Function}) :JSX.Element => {
                 const data = await props.getMovies(page).then(function(result:{results:[], total_pages:number}) {
                     let newPage = pages.concat(result.results);
                     setPages(newPage);
-                    console.log(pages);
                     lastPage = result.total_pages;
                 });
             } finally{
@@ -32,6 +29,10 @@ export const Grid = (props:{getMovies: Function}) :JSX.Element => {
     };
 
     let interator:number = 0;
+
+    const response = fetch('https://http://localhost:3000/api/favoritesList',{
+        method: 'GET'
+    });
 
     return(
         <InfiniteScroll

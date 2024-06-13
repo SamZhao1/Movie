@@ -1,21 +1,23 @@
 'use client'
 
-import Link from "next/link";
 import { useRouter } from 'next/navigation'
 import { useSession } from "next-auth/react";
 
-import { authOptions } from '../app/api/auth/[...nextauth]/route'
-import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
+interface MovieProps{
+    movieId:number,
+    isFavorite:Boolean,
+    userId:number
+}
 
-export const AddRemoveButton = (props:any):JSX.Element => {
+export const AddRemoveButton = ({movieId, isFavorite, userId}:MovieProps):JSX.Element => {
 
-    const router: AppRouterInstance = useRouter();
+    const router = useRouter();
     const {data:session} = useSession();
 
     const addFav:() => Promise<void> = async () => {
         await fetch('/api/favoritesList',{
             method: 'POST',
-            body: JSON.stringify({userID: props.userId, movieID: props.movieID})
+            body: JSON.stringify({userID: userId, movieID: movieId})
         })
 
         router.refresh();
@@ -24,18 +26,14 @@ export const AddRemoveButton = (props:any):JSX.Element => {
     const removeFav:() => Promise<void> = async () => {
         await fetch('/api/favoritesList',{
             method: 'DELETE',
-            body: JSON.stringify({userID: props.userId, movieID: props.movieID})
+            body: JSON.stringify({userID: userId, movieID: movieId})
         })
 
         router.refresh();
     }
 
-    //console.log('isFav', props.isFav);
-    //console.log('Client Check:', props.userId);
-    //console.log(props);
-
     if(session){
-        if(props.isFav){
+        if(isFavorite){
             return(
                 <button onClick={removeFav}>
                     Remove from favorites
@@ -48,7 +46,6 @@ export const AddRemoveButton = (props:any):JSX.Element => {
                     Add to favorites
             </button>
         )
-
     }
 
     else{

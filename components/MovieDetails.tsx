@@ -45,7 +45,7 @@ export const MovieDetails = ({details, isFav, userId}:MovieProps): JSX.Element =
                 <p className='card-text subtitle is-4'>{details.overview}</p>
             </div>
 
-            <AddRemoveButton movieID={details.id} isFav={isFav} userId = {userId}/>
+            <AddRemoveButton movieId={details.id} isFavorite={isFav} userId = {userId}/>
         </div>
     )
 }
